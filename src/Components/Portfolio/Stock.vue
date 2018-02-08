@@ -2,26 +2,33 @@
   <div class="col-md-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">
+        <h4 class="card-title">
           {{stock.name}}
           <small>(Price:{{stock.price | currency}}) (Quantity: {{stock.quantity}})</small>
-        </h3>
+        </h4>
       </div>
       <div class="card-body">
-        <div class="pull-left">
-          <input type="text" class="form-control" placeholder="Quantity" v-model="quantity">
-        </div>
-        <div class="pull-right">
-          <button class="btn btn-success"
-                  @click="sellPortfolioStock"
-                  :disabled="inSufficientStocks || quantity <=0 || isNaN(quantity)"
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Quantity" v-model="quantity"
+             :class="{danger : inSufficientStocks}"
           >
-            {{ inSufficientStocks ? 'Insufficient Stocks' : 'Sell'  }}</button>
         </div>
+        <button class="btn btn-success"
+          @click="sellPortfolioStock"
+          :disabled="inSufficientStocks || quantity <=0 || isNaN(quantity)"
+        >
+        {{ inSufficientStocks ? 'Insufficient Stocks' : 'Sell'  }}</button>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+  .danger {
+    border: 1px solid mediumvioletred;
+    box-shadow: 0 0 0 0.2rem mediumvioletred;
+  }
+</style>
 
 <script>
   import {mapActions} from 'vuex';

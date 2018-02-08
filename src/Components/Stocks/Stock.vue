@@ -2,26 +2,24 @@
   <div class="col-md-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">
+        <h4 class="card-title">
           {{stock.name}}
           <small>(Price:{{stock.price | currency}})</small>
-        </h3>
+        </h4>
       </div>
       <div class="card-body">
-        <div class="pull-left">
+        <div class="form-group">
           <input type="text" placeholder="Quantity" v-model="quantity"
-            class="form-control"
-            :class="{danger : inSufficientFunds}"
+                 class="form-control"
+                 :class="{danger : inSufficientFunds}"
           >
         </div>
-        <div class="pull-right">
           <button class="btn btn-success"
             @click="buyStock"
             :disabled="inSufficientFunds || quantity <=0 || isNaN(quantity)"
             >
               {{ inSufficientFunds ? 'Insufficient Funds' : 'Buy'  }}
           </button>
-        </div>
       </div>
     </div>
   </div>
@@ -30,6 +28,7 @@
 <style scoped>
   .danger {
     border: 1px solid mediumvioletred;
+    box-shadow: 0 0 0 0.2rem mediumvioletred;
   }
 </style>
 
