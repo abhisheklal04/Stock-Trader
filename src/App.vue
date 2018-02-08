@@ -1,12 +1,16 @@
 <template>
-  <div class="container">
+  <div>
     <app-header></app-header>
-    <div class="container" style="padding-top:70px;">
+    <div class="container main">
           <router-view></router-view>
     </div>
   </div>
 </template>
-
+<style scoped>
+  .main {
+    padding-top:70px;
+  }
+</style>
 <script>
   import header from './Components/Header.vue';
   export default {
