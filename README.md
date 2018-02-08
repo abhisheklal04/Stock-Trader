@@ -1,7 +1,8 @@
-# stock-trader
+# Stock Trader
+>Technology: Vue.js, Bootstrap 4, webpack
 
 > A Vue js single page application for stock trading. 
-> https://abhisheklal04.github.io/stock-trader/
+> Demo : https://abhisheklal04.github.io/stock-trader/
 
 ## Build Setup
 
