@@ -1,6 +1,7 @@
 # stock-trader
 
-> A Vue.js project
+> A Vue js single page application for stock trading. 
+> https://abhisheklal04.github.io/stock-trader/
 
 ## Build Setup
 
